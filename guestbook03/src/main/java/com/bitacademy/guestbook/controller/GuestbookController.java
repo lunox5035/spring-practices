@@ -7,16 +7,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.bitacademy.guestbook.repository.guestbookRepository;
-import com.bitacademy.guestbook.vo.guestbookVo;
+import com.bitacademy.guestbook.repository.GuestbookRepository;
+import com.bitacademy.guestbook.vo.GuestbookVo;
+
 
 @Controller
 public class GuestbookController {
 	@Autowired
-	private guestbookRepository
+	private GuestbookRepository guestbookRepository;
+	
 	@RequestMapping("")
 	public String index(Model model) {
-		List<guestbookVo> list = guestbookRepository.findAll();
+		List<GuestbookVo> list = guestbookRepository.findAll();
+		model.addAttribute("list",list);
+		return "/WEB-INF/views/index.jsp";
 	}
+	
 	
 }

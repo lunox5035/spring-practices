@@ -40,8 +40,8 @@ public class GuestbookController {
 	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
-	public String delete(GuestbookVo vo) {
-		guestbookRepository.insert(vo);
+	public String delete(long no, String password) {
+		guestbookRepository.deleteByNoAndPassword(no, password);
 		return "redirect:/";
 	}
 	

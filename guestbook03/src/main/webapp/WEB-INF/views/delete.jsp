@@ -10,7 +10,7 @@
 </head>
 <body>
 	<form method="post" action="${pageContext.request.contextPath }/delete">
-		<input type="hidden" name="no" value="${vo.no }">
+		<input type="hidden" name="no" value="${param.no }">
 		<table>
 			<tr>
 				<td>비밀번호</td>

@@ -2,7 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%
+pageContext.setAttribute("newline", "\n");
+%>
 
 <!DOCTYPE html>
 <html>
@@ -39,7 +41,8 @@
 				<td><a href="${pageContext.request.contextPath }/delete?no=${vo.no }">삭제</a></td>
 			</tr>
 			<tr>
-				<td colspan=4>${vo.contents }</td>
+				
+				<td colspan=4>${fn:replace(vo.contents,newline,'<br/>') }</td>
 			</tr>
 			
 		</table>

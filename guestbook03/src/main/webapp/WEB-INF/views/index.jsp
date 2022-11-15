@@ -1,4 +1,4 @@
-<%@page import="com.bitacademy.guestbook.vo.guestbookVo"%>
+<%@page import="com.bitacademy.guestbook.vo.GuestbookVo"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -10,7 +10,7 @@
 <title>방명록</title>
 </head>
 <body>
-	<form action="<%=request.getContextPath() %>/add" method="post">
+	<form action="${pageContext.request.contextPath }/add" method="post">
 		<input type="hidden" name="a" value="add">
 		<table border=1 width=500>
 			<tr>
@@ -28,16 +28,16 @@
 	
 	<%
 		int count = list.size();
-		int index = 0;
-		for(guestbookVo vo : list){
-	%>
+				int index = 0;
+				for(GuestbookVo vo : list){
+		%>
 		<br>
 		<table width=510 border=1>
 			<tr>
 				<td>[<%=count-index++ %>]</td>
 				<td><%=vo.getName() %></td>
 				<td><%=vo.getRegDate() %></td>
-				<td><a href="<%=request.getContextPath() %>/gb?a=deleteform&no=<%=vo.getNo() %>">삭제</a></td>
+				<td><a href="${pageContext.request.contextPath }/gb?a=deleteform&no=<%=vo.getNo() %>">삭제</a></td>
 			</tr>
 			<tr>
 				<td colspan=4><%=vo.getContents().replaceAll("\n", "<br/>") %></td>

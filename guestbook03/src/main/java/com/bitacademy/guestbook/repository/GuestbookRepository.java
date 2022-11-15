@@ -8,12 +8,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bitacademy.guestbook.vo.guestbookVo;
+import com.bitacademy.guestbook.vo.GuestbookVo;
 
-public class guestbookRepository {
+public class GuestbookRepository {
 
 //===============================================================================================
-	public Boolean insert(guestbookVo vo) {
+	public Boolean insert(GuestbookVo vo) {
 		boolean result = false;
 		
 		Connection conn = null;
@@ -96,8 +96,8 @@ public class guestbookRepository {
 	}
 	
 //===============================================================================================
-	public List<guestbookVo> findAll() {
-		List<guestbookVo> result = new ArrayList<>();
+	public List<GuestbookVo> findAll() {
+		List<GuestbookVo> result = new ArrayList<>();
 	
 		Connection conn = null;
 		PreparedStatement  pstmt = null;
@@ -120,7 +120,7 @@ public class guestbookRepository {
 				String contents = rs.getString(3);
 				String regDate = rs.getString(4);
 				
-				guestbookVo vo = new guestbookVo();
+				GuestbookVo vo = new GuestbookVo();
 				vo.setNo(no);
 				vo.setName(name);
 				vo.setContents(contents);

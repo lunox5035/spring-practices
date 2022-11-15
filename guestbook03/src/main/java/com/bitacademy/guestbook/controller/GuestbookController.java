@@ -33,4 +33,16 @@ public class GuestbookController {
 		return "redirect:/";
 	}
 	
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String delete() {
+		return "/WEB-INF/views/delete.jsp";
+	}
+
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public String delete(GuestbookVo vo) {
+		guestbookRepository.insert(vo);
+		return "redirect:/";
+	}
+	
 }

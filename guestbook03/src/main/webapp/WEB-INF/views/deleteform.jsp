@@ -1,8 +1,7 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%
-	String no =request.getParameter("no");
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <html>
 <head>
@@ -10,8 +9,8 @@
 <title>방명록</title>
 </head>
 <body>
-	<form method="post" action="<%=request.getContextPath() %>/gc?g=delete">
-		<input type="hidden" name="no" value="<%=no %>">
+	<form method="post" action="${pageContext.request.contextPath }/delete">
+		<input type="hidden" name="no" value="${vo.no }">
 		<table>
 			<tr>
 				<td>비밀번호</td>
@@ -20,7 +19,7 @@
 			</tr>
 		</table>
 		<br/><br/>
-		<a href="<%=request.getContextPath() %>/gc">메인으로 돌아가기</a>
+		<a href="${pageContext.request.contextPath }">메인으로 돌아가기</a>
 	</form>
 </body>
 </html>

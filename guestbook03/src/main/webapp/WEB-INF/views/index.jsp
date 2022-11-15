@@ -27,14 +27,19 @@
 		</table>
 	</form>
 	
-		<c:forEach var="vo" items="${list }" varStatus="status">
+	
+	<c:set var="count" value="${fn:length(list) }" />
+			<c:forEach var="vo" items="${list }" varStatus="status">
 		<br>
 		<table width=510 border=1>
 			<tr>
-				<td>${status.index }</td>
+				<td>${count-status.index }</td>
 				<td>${vo.name }</td>
 				<td>${vo.reg_date }</td>
-				<td><a href="${pageContext.request.contextPath }/add">삭제</a></td>
+				<td><a href="${pageContext.request.contextPath }/delete&no=${vo.no }">삭제</a></td>
+			</tr>
+			<tr>
+				<td colspan=4>${vo.contents }</td>
 			</tr>
 			
 		</table>

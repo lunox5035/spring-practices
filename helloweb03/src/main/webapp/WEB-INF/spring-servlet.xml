@@ -11,5 +11,19 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:annotation-config /> <!-- bean을 annotation(@)으로 설정 annotation기반의 scanning 기술 -->
-	<context:component-scan base-package="com.bitacademy.guestbook.controller" /> <!-- 경로 확인 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+		<mvc:mapping path="/board/**"/>
+		<bean class="com.bitacaddemy.helloweb.interceptor.Myinterceptor01"/>
+		</mvc:interceptor>
+			<mvc:interceptor>
+		<mvc:mapping path="/guestbool/**"/>
+		<bean class="com.bitacaddemy.helloweb.interceptor.Myinterceptor02"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.bitacademy.helloweb.controller" />
+
+</beans>

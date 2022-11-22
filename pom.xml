@@ -9,5 +9,7 @@
   	<module>emaillist03</module>
   	<module>guestbook03</module>
   	<module>logex</module>
+  	<module>fileuplode</module>
+  	<module>fileupload</module>
   </modules>
 </project>

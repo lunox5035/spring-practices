@@ -11,5 +11,6 @@
   	<module>logex</module>
   	<module>fileuplode</module>
   	<module>fileupload</module>
+  	<module>aoptest</module>
   </modules>
 </project>

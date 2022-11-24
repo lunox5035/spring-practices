@@ -23,4 +23,9 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 	</dependencies>	
+
+	<build>
+		<finalName> conte</finalName>
+	</build>>>
+
 </project>

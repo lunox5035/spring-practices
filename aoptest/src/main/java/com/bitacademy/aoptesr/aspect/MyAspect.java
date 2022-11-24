@@ -33,20 +33,22 @@ public class MyAspect {
 		System.out.println("---Aftre Throwing Advice"+ex+"-----");
 	}
 	
-	@Around("excution(* *..*.ProductService.find(..))")
-	public void AroundAdvice(ProceedingJoinPoint pjp) throws Throwable {
-		/* before*/
-		System.out.println("---Around(Before) Advice");
-		
-		/* PointCut Method 실행*/
-		 pjp.proceed();
+	@Around("execution(* *..*.ProductService.*(..))")
+	public Object aroundAdvice(ProceedingJoinPoint pjp) throws Throwable {
+		/* before */
+		System.out.println("--- Around(Before) Advice ---");
 
-		//파라미터 가로체기
-//		Object[]
-//		System.out.println("---Around(Aftre) Advice");
-	
-	
-//		retutn result;
+		/* PointCut Method 실행 */
+		Object result = pjp.proceed();
+		
+		// 파라미터 가로채기
+		// Object[] params = {"Camera"};
+		// Object result = pjp.proceed(params);
+		
+		/* after */
+		System.out.println("--- Around(After) Advice ---");
+		
+		return result;
 	}
 }
 		

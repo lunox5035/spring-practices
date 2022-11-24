@@ -33,14 +33,8 @@ public class XmlConfigTest {
 	}	
 	
 	private static void testApplocationcontest02() {
-ApplicationContext ac =new ClassPathXmlApplicationContext("com/bitacademy/container/config/user/applicationContext02.xml");
-		
-		User01 user01 = ac.getBean(User01.class);
-		System.out.println(user01.getName());
-		
-		//Beand의 id가 자동으로 설정된다.
-		user01 = (User01)ac.getBean("user01");
-		System.out.println(user01.getName());		
-	}
+		ApplicationContext ac =new ClassPathXmlApplicationContext("com/bitacademy/container/config/user/applicationContext02.xml");
+
+}
 
 }

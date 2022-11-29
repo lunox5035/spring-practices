@@ -1,8 +1,6 @@
 package com.bitacademy.container.config.videosystem;
 
-import com.bitacademy.container.videosystem.DigitalVideoDisc;
-
-public class Avengers implements DigitalVideoDisc {
+public class Avengers {
 	private String studio = "MARVEL";
 	private String title = "Avengers";
 	

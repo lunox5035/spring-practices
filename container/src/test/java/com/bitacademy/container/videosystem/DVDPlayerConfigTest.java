@@ -27,7 +27,12 @@ public class DVDPlayerConfigTest {
 		//같은 타입의 Bean이 두개 이상 있는 경우
 		//설정클래스의 빈 생성 메소드의 @Bean의 name 속성의 값을 사용
 		@Autowired
+		@Qualifier("dvdPlaterTwo")
 		private DVDPlayer dvdPlayer2;
+
+		@Autowired
+		@Qualifier("dvdPlater3")
+		private DVDPlayer dvdPlayer3;
 		
 		@Test
 		public void testDVDPlayerNotNull() {

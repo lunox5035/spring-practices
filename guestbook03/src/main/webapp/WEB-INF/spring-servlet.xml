@@ -11,5 +11,7 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:annotation-config /> <!-- bean을 annotation(@)으로 설정 annotation기반의 scanning 기술 -->
-	<context:component-scan base-package="com.bitacademy.guestbook.controller" /> <!-- 경로 확인 -->
+	<context:annotation-config />
+	<context:component-scan base-package="com.bitacademy.guestbook.controller" />
+
+</beans>

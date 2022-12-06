@@ -1,6 +1,8 @@
 package com.bitacademy.container.config.videosystem;
 
-public class Avengers {
+import com.bitacademy.container.videosystem.DigitalVideoDisc;
+
+public class Avengers implements DigitalVideoDisc {
 	private String studio = "MARVEL";
 	private String title = "Avengers";
 	
@@ -8,5 +10,4 @@ public class Avengers {
 	public String play() {
 		return "Playing Movie " + studio + "'s " + title;
 	}
-	
 }

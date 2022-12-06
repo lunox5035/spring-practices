@@ -46,15 +46,22 @@
 		<finalName>container</finalName>
 		<plugins>
 			<plugin>
+		<artufactId>maven-surefire-plugin</artufactId>
+		<version>2.22.2</version>
+		
+		<dependencies>
+			<dependency>
 				<groupId>org.junit.platform</groupId>
 				<artifactId>junit-platform-surefire-provider</artifactId>
 				<version>1.3.2</version>
-			</plugin>
-			<plugin>
+			</dependency>
+			<dependency>
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter.engine</artifactId>
 				<version>5.8.2</version>
-			</plugin>
+			</dependency>
+		</dependencies>
+		</plugin>
 		</plugins>
 	</build>
 		

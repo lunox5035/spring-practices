@@ -6,37 +6,35 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>aoptest</artifactId>
-	
-		<properties>
+	<packaging>jar</packaging>
+
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
 		<maven.compiler.source>12</maven.compiler.source>
 		<maven.compiler.target>12</maven.compiler.target>
 		<org.springframework-version>4.3.4.RELEASE</org.springframework-version>
-	<!-- auto proxy -->
-		<aop:aspectj-autoproxy/>
-		
 	</properties>
 
 	<dependencies>
-		<!--Spring Context(Cintauber) -->
+		<!-- Spring Context(Container) -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		<!-- spring aspect -->
+		<!-- spring Aspect -->
 		<dependency>
-	    	<groupId>org.springframework</groupId>
-	    	<artifactId>spring-aspects</artifactId>
-	    	<version>${org.springframework-version}</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${org.springframework-version}</version>
 		</dependency>
-		
+
 	</dependencies>
+	
+	<build>
+		<finalName>aoptest</finalName>
+	</build>
+	
 </project>
-
-
-
-
-
